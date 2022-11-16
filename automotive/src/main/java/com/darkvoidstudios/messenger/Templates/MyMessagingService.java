@@ -1,4 +1,4 @@
-package com.darkvoidstudios.messenger;
+package com.darkvoidstudios.messenger.Templates;
 
 import android.app.PendingIntent;
 import android.app.Service;

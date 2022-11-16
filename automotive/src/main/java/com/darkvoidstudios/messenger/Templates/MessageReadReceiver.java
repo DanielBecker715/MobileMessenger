@@ -1,4 +1,4 @@
-package com.darkvoidstudios.messenger;
+package com.darkvoidstudios.messenger.Templates;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
