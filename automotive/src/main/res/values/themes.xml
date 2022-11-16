@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.Messenger" parent="android:Theme.Material.Light.DarkActionBar"/>
+</resources>
