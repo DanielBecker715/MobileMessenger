@@ -19,18 +19,18 @@
                 android:resource="@xml/automotive_app_desc"/>
 
         <service
-                android:name=".MyMessagingService"
+                android:name=".Templates.MyMessagingService"
                 android:exported="true"/>
 
         <receiver
-                android:name=".MessageReadReceiver"
+                android:name=".Templates.MessageReadReceiver"
                 android:exported="true">
             <intent-filter>
                 <action android:name="com.darkvoidstudios.messenger.ACTION_MESSAGE_READ"/>
             </intent-filter>
         </receiver>
         <receiver
-                android:name=".MessageReplyReceiver"
+                android:name=".Templates.MessageReplyReceiver"
                 android:exported="true">
             <intent-filter>
                 <action android:name="com.darkvoidstudios.messenger.ACTION_MESSAGE_REPLY"/>
