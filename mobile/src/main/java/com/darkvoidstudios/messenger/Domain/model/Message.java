@@ -1,13 +1,10 @@
-package com.darkvoidstudios.messenger.Domain.Model;
+package com.darkvoidstudios.messenger.Domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.sql.Timestamp;
 
-
-@Getter
-@Setter
+@Data
 public class Message {
     private String uuid;
     private String message;

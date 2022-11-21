@@ -16,6 +16,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("license.txt")
+        resources.excludes.add("notice.txt")
+        resources.excludes.add("META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat")
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,7 +35,8 @@ android {
     }
 }
 
-apply plugin: "org.springframework.boot"
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.android.application'
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -37,6 +45,8 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.24'
     implementation 'org.apache.logging.log4j:log4j-api:2.19.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.19.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
