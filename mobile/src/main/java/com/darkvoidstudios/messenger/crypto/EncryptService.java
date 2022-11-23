@@ -1,6 +1,6 @@
-package com.darkvoidstudios.messenger.Domain;
+package com.darkvoidstudios.messenger.crypto;
 
-import com.darkvoidstudios.messenger.Domain.model.Message;
+import com.darkvoidstudios.messenger.messages.Message;
 import lombok.extern.log4j.Log4j2;
 
 import java.math.BigInteger;
@@ -9,7 +9,6 @@ import java.security.NoSuchAlgorithmException;
 
 @Log4j2
 public class EncryptService {
-
     public Message encryptE2E(Message message) {
 
         return message;

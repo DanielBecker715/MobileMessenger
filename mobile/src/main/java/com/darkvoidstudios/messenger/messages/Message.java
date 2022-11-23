@@ -1,4 +1,4 @@
-package com.darkvoidstudios.messenger.Domain.model;
+package com.darkvoidstudios.messenger.messages;
 
 import lombok.Data;
 
