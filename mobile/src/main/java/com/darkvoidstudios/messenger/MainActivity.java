@@ -5,6 +5,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.darkvoidstudios.messenger.database.LoginController;
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /** Called when the user touches the button */
-    public void onLoginButtonSubmit(View view) throws IOException {
+    public void onLoginButtonSubmit(View view) throws IOException, JSONException {
         EditText inputUsername = findViewById(R.id.inputUsername);
         EditText inputPassword = findViewById(R.id.inputPassword);
 

@@ -2,21 +2,21 @@ package com.darkvoidstudios.messenger.database;
 
 import com.darkvoidstudios.messenger.account.User;
 import com.darkvoidstudios.messenger.crypto.EncryptService;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.core5.http.HttpResponse;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 public class LoginController {
 
-    public void loginToAccount(String username, String unhashedPassword) throws IOException {
-        URL url = new URL("https://api.darkvoidstudios.com/messenger/login");
+    public void loginToAccount(String username, String unhashedPassword) throws IOException, JSONException {
+        URL url = new URL("https://api.darkvoidstudios.com/messenger/login/index.php");
 
         //Preparing login data
         User user = new User();
@@ -25,25 +25,27 @@ public class LoginController {
         String hashedPassword = EncryptService.encryptSHA512(unhashedPassword);
         user.setHashedPassword(hashedPassword);
 
-        System.out.println(user.getHashedPassword());
+        //Creating user in json format
+        JSONObject jsonUser = new JSONObject();
+        jsonUser.put("username", user.getUsername());
+        jsonUser.put("password", user.getHashedPassword());
 
-        //Preparing header
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json");
-        con.setRequestProperty("Accept", "application/json");
-        con.setDoOutput(true);
+        //TODO Sending via POST Method
 
-        //Sending
-        String jsonInputString = "{username: \""+user.getUsername()+"\", password: \""+user.getHashedPassword()+"\"}";
+        HttpClient httpClient = HttpClientBuilder.create().build();
 
-        byte[] out = jsonInputString.getBytes(StandardCharsets.UTF_8);
+        HttpPost request = new HttpPost("https://api.darkvoidstudios.com/messenger/login");
 
-        OutputStream stream = con.getOutputStream();
-        stream.write(out);
+        StringEntity params = new StringEntity(jsonUser.toString());
+        request.addHeader("Content-Type", "application/json");
+        request.setEntity(params);
 
-        System.out.println(con.getResponseCode() + " " + con.getResponseMessage());
-        con.disconnect();
+        HttpResponse response = httpClient.execute(request);
+        System.out.println("Code: " + response.getCode());
+
+        //Test output
+        System.out.println("Hash: " + user.getHashedPassword());
+        System.out.println("JSON String: " + jsonUser);
 
         //TODO TOKEN ABFANGEN
         user.setToken(null);
