@@ -1,4 +1,4 @@
-package com.darkvoidstudios.messenger.database;
+package com.darkvoidstudios.encryptedmessenger.database;
 
 public class MessageController {
 

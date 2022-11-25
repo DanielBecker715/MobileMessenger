@@ -1,8 +1,5 @@
-package com.darkvoidstudios.messenger.messages;
+package com.darkvoidstudios.encryptedmessenger.messages;
 
-import lombok.extern.log4j.Log4j2;
-
-@Log4j2
 public class MessageService {
 
     public void sendMessage(String message, String receiverUsername) {

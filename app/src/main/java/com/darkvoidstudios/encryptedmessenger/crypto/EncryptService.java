@@ -1,13 +1,11 @@
-package com.darkvoidstudios.messenger.crypto;
+package com.darkvoidstudios.encryptedmessenger.crypto;
 
-import com.darkvoidstudios.messenger.messages.Message;
-import lombok.extern.log4j.Log4j2;
+import com.darkvoidstudios.encryptedmessenger.messages.Message;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@Log4j2
 public class EncryptService {
     public Message encryptE2E(Message message) {
 
