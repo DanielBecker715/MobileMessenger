@@ -1,4 +1,4 @@
-package com.darkvoidstudios.encryptedmessenger.account;
+package com.darkvoidstudios.encryptedmessenger.models;
 
 import lombok.Data;
 

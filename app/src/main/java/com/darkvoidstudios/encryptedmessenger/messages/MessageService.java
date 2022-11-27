@@ -1,5 +1,7 @@
 package com.darkvoidstudios.encryptedmessenger.messages;
 
+import com.darkvoidstudios.encryptedmessenger.models.Message;
+
 public class MessageService {
 
     public void sendMessage(String message, String receiverUsername) {

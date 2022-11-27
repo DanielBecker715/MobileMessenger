@@ -1,6 +1,6 @@
 package com.darkvoidstudios.encryptedmessenger.crypto;
 
-import com.darkvoidstudios.encryptedmessenger.messages.Message;
+import com.darkvoidstudios.encryptedmessenger.models.Message;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
