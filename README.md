@@ -20,10 +20,10 @@ Currently not available, it is still under development
 
 ## ToDo
 
-- [ ] Send Messages
-- [ ] Server Rest Interface
-- [ ] Server Database
-- [ ] Receive Messages
+- [x] Send Messages
+- [x] Server Rest Interface
+- [x] Server Database
+- [x] Receive Messages
 - [ ] Message Encryptions
 - [ ] UI Design (in APP)
 
