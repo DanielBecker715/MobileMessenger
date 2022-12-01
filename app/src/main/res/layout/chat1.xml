@@ -4,14 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0f0f0f">
+    android:background="#282a36">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="459dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="570dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputMessage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/purple_background"
+        tools:layout_editor_absoluteX="-24dp" />
 
     <TextView
         android:id="@+id/contactName"
         android:layout_width="303dp"
         android:layout_height="61dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
         android:fontFamily="sans-serif-black"
         android:text="#####"
         android:textColor="#FFFFFF"
@@ -21,21 +31,22 @@
 
     <EditText
         android:id="@+id/inputMessage"
-        android:layout_width="314dp"
-        android:layout_height="56dp"
+        android:layout_width="305dp"
+        android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="81dp"
         android:layout_marginBottom="16dp"
-        android:textColor="@color/black"
         android:background="@color/white"
+        android:ems="10"
+        android:hint="Write a message.."
+        android:inputType="textLongMessage"
         android:paddingLeft="5dp"
         android:text=""
-        android:hint="Write a message.."
-        android:ems="10"
-        android:inputType="textLongMessage"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/submit"
@@ -43,12 +54,12 @@
         android:layout_height="56dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:onClick="onMessageSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/inputMessage"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        android:onClick="onMessageSubmit"/>
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
     <ImageButton
         android:id="@+id/back"
@@ -61,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/inputMessage"
-        app:srcCompat="@android:drawable/ic_menu_revert"/>
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
