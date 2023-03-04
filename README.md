@@ -15,8 +15,6 @@ Currently not available, it is still under development
 ## Authors
 
 - **Brok3nmind** - Daniel
-- **NightOwl** - Fabian
-- **KakaMax** - Florian
 
 ## ToDo
 
